@@ -17,6 +17,16 @@ public class ForumTestSuite {
         System.out.println("Test Case: end");
     }
 
+    @BeforeAll
+    public static void beforeAll() {
+        System.out.println("Test Suite: begin");
+    }
+
+    @AfterAll
+    public static void afterAll() {
+        System.out.println("Test Suite: end");
+    }
+
     @DisplayName("when create SimpleUser with realName, " +
             "then getRealName should return real user name"
     )
