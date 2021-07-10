@@ -36,13 +36,13 @@ public class ShapeCollectorTestSuite {
         @Test
         void removeFigureTest() {
             ShapeCollector shapeCollector = new ShapeCollector();
-            Assertions.assertEquals(3, shapeCollector.removeFigure(new Circle()).size());
+            Assertions.assertEquals(2, shapeCollector.removeFigure(0).size());
         }
 
         @Test
         void getfigureTest() {
             ShapeCollector shapeCollector = new ShapeCollector();
-            Assertions.assertEquals(new Circle(), shapeCollector.getFigure(3));
+            Assertions.assertEquals(2, shapeCollector.getFigure(1).getFiled(2));
         }
 
         @Test
