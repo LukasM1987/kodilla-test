@@ -1,6 +1,5 @@
 package com.kodilla.testing.shape;
 
-
 import org.junit.jupiter.api.*;
 
 @DisplayName("TDD: Shape Test Suite")
