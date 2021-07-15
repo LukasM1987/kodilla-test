@@ -5,7 +5,11 @@ import java.util.List;
 
 public class ShapeCollector {
 
-    List<Shape> shapes = new ArrayList<>();
+    private List<Shape> shapes = new ArrayList<>();
+
+    public List<Shape> getShapes() {
+        return shapes;
+    }
 
     public void addFigure(Shape shape) {
         shapes.add(shape);
@@ -26,7 +30,7 @@ public class ShapeCollector {
     public String showFigures() {
         String figures = "";
         for (int i = 0; i < shapes.size(); i++) {
-            figures = figures + shapes.get(i).getShapeName() + " Pole: " + shapes.get(i).getFiled();
+            figures = figures + shapes.get(i).toString();
             if (i < shapes.size() - 1) {
                 figures = figures + ", ";
             }

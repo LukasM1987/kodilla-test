@@ -28,52 +28,82 @@ public class ShapeCollectorTestSuite {
 
         @Test
         void addFigureTest() {
+            //Given
             ShapeCollector shapeCollector = new ShapeCollector();
             Triangle triangle = new Triangle(3, 6);
-            shapeCollector.addFigure(triangle);
             Circle circle = new Circle(10);
-            shapeCollector.addFigure(circle);
             Square square = new Square(2);
+
+            //When
+            shapeCollector.addFigure(circle);
+            shapeCollector.addFigure(triangle);
             shapeCollector.addFigure(square);
-            Assertions.assertEquals(3, shapeCollector.shapes.size());
+
+            String names = "Circle(10), Triangle(3, 6), Square(2)";
+            String allShapes = shapeCollector.showFigures();
+
+            //Then
+            Assertions.assertEquals(3, shapeCollector.getShapes().size());
+            Assertions.assertEquals(names, allShapes);
+
         }
 
         @Test
         void removeFigureTest() {
+            //Given
             ShapeCollector shapeCollector = new ShapeCollector();
             Triangle triangle = new Triangle(3, 6);
-            shapeCollector.addFigure(triangle);
             Circle circle = new Circle(10);
-            shapeCollector.addFigure(circle);
             Square square = new Square(2);
+            shapeCollector.addFigure(triangle);
+            shapeCollector.addFigure(circle);
             shapeCollector.addFigure(square);
+
+            //When
             shapeCollector.removeFigure(triangle);
-            Assertions.assertEquals(2, shapeCollector.shapes.size());
+            String names = "Circle(10), Square(2)";
+            String allShapes = shapeCollector.showFigures();
+
+            //Then
+            Assertions.assertEquals(2, shapeCollector.getShapes().size());
+            Assertions.assertEquals(names, allShapes);
         }
 
         @Test
         void getfigureTest() {
+            //Given
             ShapeCollector shapeCollector = new ShapeCollector();
             Triangle triangle = new Triangle(10, 6);
-            shapeCollector.addFigure(triangle);
             Circle circle = new Circle(10);
-            shapeCollector.addFigure(circle);
             Square square = new Square(2);
+            shapeCollector.addFigure(triangle);
+            shapeCollector.addFigure(circle);
             shapeCollector.addFigure(square);
-            Assertions.assertEquals("Triangle", shapeCollector.getFigure(0).getShapeName());
+
+            //When
+            Shape figure = shapeCollector.getFigure(0);
+
+            //Then
+            Assertions.assertEquals(triangle, figure);
         }
 
         @Test
         void showFiguresTest() {
+            //Given
             ShapeCollector shapeCollector = new ShapeCollector();
             Circle circle = new Circle(10);
-            shapeCollector.addFigure(circle);
             Triangle triangle = new Triangle(10, 6);
-            shapeCollector.addFigure(triangle);
             Square square = new Square(2);
+            shapeCollector.addFigure(circle);
+            shapeCollector.addFigure(triangle);
             shapeCollector.addFigure(square);
-            String names = "Circle Pole: 314.1592653589793, Triangle Pole: 30.0, Square Pole: 4.0";
-            Assertions.assertEquals(names, shapeCollector.showFigures());
+
+            //When
+            String names = "Circle(10), Triangle(10, 6), Square(2)";
+            String allShapes = shapeCollector.showFigures();
+
+            //Then
+            Assertions.assertEquals(names, allShapes);
         }
     }
 }
