@@ -12,7 +12,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
 @ExtendWith(MockitoExtension.class)
 public class BookDirectoryTestSuite {
 
@@ -39,18 +39,24 @@ public class BookDirectoryTestSuite {
 
     @Test
     void testListBooksWithConditionsReturnList() {
+        //Given
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         List<Book> books = new ArrayList<>();
         books.add(new Book("Secrets of Alamo", "John Smith", 2008));
         books.add(new Book("Secretaries and Directors", "Dilbert Michigan", 2012));
         books.add(new Book("Secret life of programmers", "Steve Wolkowitz", 2016));
         books.add(new Book("Secrets of Java", "Ian Tenewitch", 2010));
+
+        //When
         when(libraryDatabaseMock.listBooksWithCondition("Secret")).thenReturn(books);
+
+        //Then
         assertEquals(4, bookLibrary.listBooksWithCondition("Secret").size());
     }
 
     @Test
     void testListBooksWithConditionMoreThan20() {
+        //Given
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         List<Book> resultListOf0Books = new ArrayList<Book>();
         List<Book> resultListOf15Books = generateListOfNBooks(15);
@@ -61,9 +67,13 @@ public class BookDirectoryTestSuite {
                 .thenReturn(resultListOf0Books);
         when(libraryDatabaseMock.listBooksWithCondition("FortyBooks"))
                 .thenReturn(resultListOf40Books);
+
+        //When
         List<Book> theListOfBooks0 = bookLibrary.listBooksWithCondition("ZeroBooks");
         List<Book> theListOfBooks15 = bookLibrary.listBooksWithCondition("Any title");
         List<Book> theListOfBooks40 = bookLibrary.listBooksWithCondition("FortyBooks");
+
+        //Then
         assertEquals(0, theListOfBooks0.size());
         assertEquals(15, theListOfBooks15.size());
         assertEquals(0, theListOfBooks40.size());
@@ -71,35 +81,51 @@ public class BookDirectoryTestSuite {
 
     @Test
     void testListBooksWithConditionFragmentShorterThan3() {
+        //Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+
+        //When
         List<Book> theListOfBooks10 = bookLibrary.listBooksWithCondition("An");
+
+        //Then
         assertEquals(0, theListOfBooks10.size());
         verify(libraryDatabaseMock, times(0)).listBooksWithCondition(anyString());
     }
 
     @Test
     void testBorrowBook0(){
+        //Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         LibraryUser user = new LibraryUser("asfasfd", "dsfdasfad", "1234567890");
+
+        //When
         List<Book> userBooks = bookLibrary.listBooksInHandsOf(user);
+
+        //Then
         assertEquals(0,userBooks.size());
     }
 
     @Test
     void testBorrowBook1(){
+        //Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         LibraryUser user = new LibraryUser("xyz", "xyz", "12345678890");
         Book book = new Book("adgadga", "adgdagad", 1987);
-        user.userBorrows.add(book);
+        user.getUserBorrows().add(book);
+
+        //When
         List<Book> userBooks = bookLibrary.listBooksInHandsOf(user);
+
+        //Then
         assertEquals(1,userBooks.size());
     }
 
     @Test
     void testBorrowBook5() {
+        //Given
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         LibraryUser user = new LibraryUser("xyz", "xyz", "1234567890");
@@ -108,12 +134,16 @@ public class BookDirectoryTestSuite {
         Book book3 = new Book("sdfsdf", "dhdhdf", 2002);
         Book book4 = new Book("sdfsdfs", "sdfsdfs", 2003);
         Book book5 = new Book("sdfsdf", "sdfsdfsd", 2004);
-        user.userBorrows.add(book);
-        user.userBorrows.add(book2);
-        user.userBorrows.add(book3);
-        user.userBorrows.add(book4);
-        user.userBorrows.add(book5);
+        user.getUserBorrows().add(book);
+        user.getUserBorrows().add(book2);
+        user.getUserBorrows().add(book3);
+        user.getUserBorrows().add(book4);
+        user.getUserBorrows().add(book5);
+
+        //When
         List<Book> userBooks = bookLibrary.listBooksInHandsOf(user);
+
+        //Then
         assertEquals(5,userBooks.size());
     }
 }
