@@ -39,12 +39,11 @@ public class ShapeCollectorTestSuite {
             shapeCollector.addFigure(triangle);
             shapeCollector.addFigure(square);
 
-            String names = "Circle(10), Triangle(3, 6), Square(2)";
-            String allShapes = shapeCollector.showFigures();
-
             //Then
             Assertions.assertEquals(3, shapeCollector.getShapes().size());
-            Assertions.assertEquals(names, allShapes);
+            Assertions.assertTrue(shapeCollector.getShapes().contains(triangle));
+            Assertions.assertTrue(shapeCollector.getShapes().contains(circle));
+            Assertions.assertTrue(shapeCollector.getShapes().contains(square));
 
         }
 
@@ -61,12 +60,12 @@ public class ShapeCollectorTestSuite {
 
             //When
             shapeCollector.removeFigure(triangle);
-            String names = "Circle(10), Square(2)";
-            String allShapes = shapeCollector.showFigures();
 
             //Then
             Assertions.assertEquals(2, shapeCollector.getShapes().size());
-            Assertions.assertEquals(names, allShapes);
+            Assertions.assertFalse(shapeCollector.getShapes().contains(triangle));
+            Assertions.assertTrue(shapeCollector.getShapes().contains(circle));
+            Assertions.assertTrue(shapeCollector.getShapes().contains(square));
         }
 
         @Test
@@ -85,6 +84,9 @@ public class ShapeCollectorTestSuite {
 
             //Then
             Assertions.assertEquals(triangle, figure);
+            Assertions.assertTrue(shapeCollector.getShapes().contains(triangle));
+            Assertions.assertTrue(shapeCollector.getShapes().contains(circle));
+            Assertions.assertTrue(shapeCollector.getShapes().contains(square));
         }
 
         @Test
@@ -104,6 +106,9 @@ public class ShapeCollectorTestSuite {
 
             //Then
             Assertions.assertEquals(names, allShapes);
+            Assertions.assertTrue(shapeCollector.getShapes().contains(triangle));
+            Assertions.assertTrue(shapeCollector.getShapes().contains(circle));
+            Assertions.assertTrue(shapeCollector.getShapes().contains(square));
         }
     }
 }
