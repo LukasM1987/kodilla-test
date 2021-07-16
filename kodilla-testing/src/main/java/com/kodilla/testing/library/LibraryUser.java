@@ -1,7 +1,5 @@
 package com.kodilla.testing.library;
 
-import com.kodilla.testing.library.Book;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -11,12 +9,16 @@ public class LibraryUser {
     private String name;
     private String lastName;
     private String peselId;
-    List<Book> userBorrows = new ArrayList<>();
+    private List<Book> userBorrows = new ArrayList<>();
 
     public LibraryUser(String name, String lastName, String peselId) {
         this.name = name;
         this.lastName = lastName;
         this.peselId = peselId;
+    }
+
+    public List<Book> getUserBorrows() {
+        return userBorrows;
     }
 
     public String getName() {

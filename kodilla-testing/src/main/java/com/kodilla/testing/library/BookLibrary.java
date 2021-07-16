@@ -1,5 +1,4 @@
 package com.kodilla.testing.library;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +24,6 @@ public class BookLibrary {
     }
 
     public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
-        return libraryUser.userBorrows;
+        return libraryUser.getUserBorrows();
     }
 }
