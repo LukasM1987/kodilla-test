@@ -20,7 +20,6 @@ public final class Continent {
         return countries;
     }
 
-    //
     public void addCountry(Country country) {
         countries.add(country);
     }
