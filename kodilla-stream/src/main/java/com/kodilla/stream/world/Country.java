@@ -12,6 +12,7 @@ public final class Country {
         this.citizensNumber = citizensNumber;
     }
 
+    //
     public String getCountry() {
         return country;
     }
