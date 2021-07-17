@@ -18,7 +18,7 @@ public class WorldTestSuite {
 
     @Test
     void testGetPeopleQuantity() {
-        //
+
         //Given
         World world = new World();
         Continent southAmerica = new Continent("South America");
