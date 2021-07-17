@@ -18,6 +18,7 @@ public class WorldTestSuite {
 
     @Test
     void testGetPeopleQuantity() {
+        //
         //Given
         World world = new World();
         Continent southAmerica = new Continent("South America");
@@ -44,8 +45,5 @@ public class WorldTestSuite {
         //Then
         BigDecimal expectedResult = new BigDecimal("3133056459");
         Assertions.assertEquals(expectedResult, worldPopulation);
-
-
-
     }
 }
