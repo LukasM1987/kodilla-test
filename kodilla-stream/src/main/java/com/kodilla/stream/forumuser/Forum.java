@@ -5,9 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Forum {
+public final class Forum {
 
-    private int usersSize;
     private final List<ForumUser> users = new ArrayList<>();
     private static final Random random = new Random();
     private static final char[] chars = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
