@@ -88,7 +88,7 @@ public class BoardTestSuite {
         inProgressTasks.add(new TaskList("In progress"));
         double average = project.getTasksLists().stream()
                 .filter(inProgressTasks::contains)
-                .flatMap(ave -> ave.getTasks().stream())
+                .flatMap(taskList -> taskList.getTasks().stream())
                 .map(days -> ChronoUnit.DAYS.between(days.getCreated(), LocalDate.now()))
                 .map(value -> value.doubleValue())
                 .mapToDouble(Double::doubleValue)
