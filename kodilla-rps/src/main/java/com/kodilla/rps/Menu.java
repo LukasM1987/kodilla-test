@@ -1,6 +1,6 @@
 package com.kodilla.rps;
 
-import com.sun.tools.javac.Main;
+import com.kodilla.rps.RpsRunner;
 
 import java.util.Scanner;
 
@@ -30,12 +30,7 @@ class Menu {
         }
         if (choice.equalsIgnoreCase(restartGame)) {
             System.out.println("The game has been restarted.");
-            Game game = new Game();
-            game.mainMenuRoudns();
-            game.skirmish();
-            game.skirmishResult();
-            endMenu();
-            //Main.main(null);
+            RpsRunner.main(null);
         }
         while (!choice.equalsIgnoreCase(gameEnd) || !choice.equalsIgnoreCase(restartGame)) {
             System.out.print("Please enter correct mark: ");
@@ -46,12 +41,7 @@ class Menu {
             }
             if (choice.equalsIgnoreCase(restartGame)) {
                 System.out.println("The game has been restarted.");
-                Game game = new Game();
-                game.mainMenuRoudns();
-                game.skirmish();
-                game.skirmishResult();
-                endMenu();
-                //Main.main(null);
+                RpsRunner.main(null);
             }
         }
     }
