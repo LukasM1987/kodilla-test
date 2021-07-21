@@ -17,6 +17,11 @@ public class Triangle implements Shape {
 
     @Override
     public double getFiled() {
-        return (double) (a * h / 2);
+        return (a * h / 2.0);
+    }
+
+    @Override
+    public String toString() {
+        return getShapeName() + "(" + a + ", " + h + ")";
     }
 }
