@@ -7,9 +7,9 @@ public class ExceptionHandling {
         try {
             secondChallenge.probablyIWillThrowException(2.0, 1.5);
         } catch (Exception e) {
-            System.out.println("You chose wrong numbers. Errror: " + e);
+            System.out.println("You choose wrong numbers, error: " + e);
         } finally {
-            System.out.println("And that will be all...");
+            System.out.println("That will be all...");
         }
     }
 }
