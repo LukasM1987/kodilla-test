@@ -17,4 +17,9 @@ public class Square implements Shape {
     public double getFiled() {
         return a * a;
     }
+
+    @Override
+    public String toString() {
+        return getShapeName() + "(" + a + ")";
+    }
 }
