@@ -18,7 +18,6 @@ public class RouteFinder {
         routes.put("Lublin", false);
         routes.put("Berlin", true);
         routes.put("Olsztyn", false);
-
         if ((routes.containsKey(flight.getDepartureAirptort()) && (routes.containsKey(flight.getArrivalAirport())))) {
             if ((routes.get(flight.getDepartureAirptort()) && (routes.get(flight.getArrivalAirport())))) {
                 System.out.println("This connection is existing, have a nice fly.");

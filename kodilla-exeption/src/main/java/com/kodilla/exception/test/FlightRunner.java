@@ -11,7 +11,6 @@ public class FlightRunner {
         } finally {
             System.out.println("Thank you for using our services.");
         }
-
         try {
             findRoute.findRoutes(new Flight("Berlin", "Warszawa"));
         } catch (RouteNotFoundException e) {
