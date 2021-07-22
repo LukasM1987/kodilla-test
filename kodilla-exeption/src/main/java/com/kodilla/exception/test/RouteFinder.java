@@ -22,10 +22,11 @@ public class RouteFinder {
             if ((routes.get(flight.getDepartureAirptort()) && (routes.get(flight.getArrivalAirport())))) {
                 System.out.println("This connection is existing, have a nice fly.");
             } else {
-                throw new RouteNotFoundException();
+                System.out.println("There is no connection between: " +
+                        flight.getDepartureAirptort() + " and " + flight.getArrivalAirport());
             }
         } else {
-            System.out.println("Airport does not exist.");
+            throw new RouteNotFoundException();
         }
     }
 }
