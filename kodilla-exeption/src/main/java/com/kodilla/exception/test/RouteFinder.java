@@ -8,7 +8,6 @@ import java.util.Map;
 public class RouteFinder {
 
     public void findRoutes(Flight flight, Map<String, Boolean> routes) throws RouteNotFoundException {
-
         if (!routes.containsKey(flight.getArrivalAirport()) || !routes.containsKey(flight.getDepartureAirptort())) {
             throw new RouteNotFoundException();
         } else {

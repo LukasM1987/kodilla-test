@@ -17,6 +17,7 @@ public class FlightRunner {
         routes.put("Lublin", false);
         routes.put("Berlin", true);
         routes.put("Olsztyn", false);
+
         try {
             findRoute.findRoutes(flight, routes);
         } catch (RouteNotFoundException e) {
