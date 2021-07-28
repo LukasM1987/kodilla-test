@@ -1,8 +1,8 @@
 package com.kodilla.rps;
 
 public class Statistics {
-    private static int userResult = 0;
-    private static int enemyResult = 0;
+    private int userResult;
+    private int enemyResult;
 
     public int getUserResult() {
         return userResult++;
