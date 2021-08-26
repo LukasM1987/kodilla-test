@@ -5,22 +5,21 @@ import java.util.stream.Collectors;
 
 public class MoviesStream {
 
+    private static final MovieStore movieStore = new MovieStore();
     private static String movies;
 
     public static void main(String[] args) {
+        addSign();
         print();
     }
 
     private static void addSign() {
-        MovieStore movieStore = new MovieStore();
         movies = movieStore.getMovies().entrySet().stream()
-                .map(Map.Entry::getValue)
-                .map(sign -> String.join(" ! ", sign))
-                .collect(Collectors.joining());
+                .flatMap(movie -> movie.getValue().stream())
+                .collect(Collectors.joining(" ! "));
     }
 
     private static void print() {
-        addSign();
         System.out.println(movies);
     }
 }
