@@ -1,16 +1,16 @@
 package com.kodilla.good.patterns.challenges;
 
 public class User {
-    private String userName;
-    private String email;
+    private final String name;
+    private final String email;
 
-    public User(String userName, String email) {
-        this.userName = userName;
+    public User(String name, String email) {
+        this.name = name;
         this.email = email;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getName() {
+        return name;
     }
 
     public String getEmail() {

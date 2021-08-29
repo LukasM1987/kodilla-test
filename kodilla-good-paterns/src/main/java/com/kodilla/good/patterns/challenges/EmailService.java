@@ -5,11 +5,11 @@ import java.time.LocalDate;
 public class EmailService implements InformationService {
 
     @Override
-    public void information(User user, Product product, LocalDate localDate, boolean isSold) {
+    public void inform(User user, Product product, LocalDate localDate, boolean isSold) {
         if (isSold) {
-            System.out.println("Thank you " + user.getUserName() + " for buying: " + product.getProductName() + " at: " + localDate);
+            System.out.println("Thank you " + user.getName() + " for buying: " + product.getName() + " at: " + localDate);
         } else {
-            System.out.println("Sorry, but we don't have product: " + product.getProductName() + " in stock.");
+            System.out.println("Sorry, but we don't have product: " + product.getName() + " in stock.");
         }
     }
 }

@@ -6,7 +6,7 @@ public class ServiceRunner {
         OrderGenerator orderGenerator = new OrderGenerator();
         Order order = orderGenerator.generateOrder();
 
-        ProductOrderService productOrderService = new ProductOrderService(new EmailService(),new ProductService(), new NewSale());
+        ProductOrderService productOrderService = new ProductOrderService(new EmailService(),new ProductService(), new SaleRepositoryImpl());
         productOrderService.productOrderProcess(order);
     }
 }

@@ -34,7 +34,7 @@ public class OrderGenerator {
 
     private Product generateProduct() {
         String productName = "";
-        int price = random.nextInt(1000) + 100;
+        int price = random.nextInt(900) + 100;
         int productLength = random.nextInt(chars.length) + 5;
         for (int i = 0; i < productLength; i++) {
             int randomChar = random.nextInt(chars.length);
