@@ -24,7 +24,11 @@ public class Flight {
 
     @Override
     public String toString() {
-        return "Your flight from: " + departureCity + " to " + arrivalCity + " in day: " + flightDay;
+        return "Flight{" +
+                "departureCity='" + departureCity + '\'' +
+                ", arrivalCity='" + arrivalCity + '\'' +
+                ", flightDay=" + flightDay +
+                '}';
     }
 
     @Override
