@@ -35,8 +35,8 @@ public class BoardTestSuite {
 
         //Then
         Assertions.assertEquals(2, tasks.size());
-        Assertions.assertEquals(0, tasks.get(0).getAssignedUser());
-        Assertions.assertEquals(1, tasks.get(1).getAssignedUser());
+        Assertions.assertEquals(user, tasks.get(0).getAssignedUser());
+        Assertions.assertEquals(user, tasks.get(1).getAssignedUser());
     }
 
     @Test
