@@ -43,7 +43,6 @@ public final class Task {
     public LocalDate getDeadline() {
         return deadline;
     }
-
     @Override
     public String toString() {
         return "Task{" +

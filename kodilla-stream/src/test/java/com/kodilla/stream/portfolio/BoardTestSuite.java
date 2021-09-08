@@ -35,8 +35,8 @@ public class BoardTestSuite {
 
         //Then
         Assertions.assertEquals(2, tasks.size());
-        Assertions.assertEquals(0, tasks.get(0).getAssignedUser());
-        Assertions.assertEquals(1, tasks.get(1).getAssignedUser());
+        Assertions.assertEquals(user, tasks.get(0).getAssignedUser());
+        Assertions.assertEquals(user, tasks.get(1).getAssignedUser());
     }
 
     @Test
@@ -88,7 +88,7 @@ public class BoardTestSuite {
         inProgressTasks.add(new TaskList("In progress"));
         double average = project.getTasksLists().stream()
                 .filter(inProgressTasks::contains)
-                .flatMap(ave -> ave.getTasks().stream())
+                .flatMap(taskList -> taskList.getTasks().stream())
                 .map(days -> ChronoUnit.DAYS.between(days.getCreated(), LocalDate.now()))
                 .map(value -> value.doubleValue())
                 .mapToDouble(Double::doubleValue)
