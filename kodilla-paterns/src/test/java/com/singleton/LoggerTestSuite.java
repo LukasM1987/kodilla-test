@@ -24,6 +24,6 @@ public class LoggerTestSuite {
         String logName = logger.getLastLog();
 
         //Then
-        Assertions.assertEquals("log3", logName);
+        Assertions.assertEquals("log2", logName);
     }
 }
