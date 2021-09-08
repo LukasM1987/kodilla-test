@@ -17,11 +17,13 @@ public class LoggerTestSuite {
     void logTest() {
         //Give
         logger.log("log");
+        logger.log("log1");
+        logger.log("log2");
 
         //When
         String logName = logger.getLastLog();
 
         //Then
-        Assertions.assertEquals("log", logName);
+        Assertions.assertEquals("log3", logName);
     }
 }
