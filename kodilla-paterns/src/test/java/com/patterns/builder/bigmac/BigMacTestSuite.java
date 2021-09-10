@@ -28,8 +28,8 @@ public class BigMacTestSuite {
         Assertions.assertAll(
                 () -> Assertions.assertEquals(3, howManyIngredients),
                 () -> Assertions.assertEquals(2, howManyBurgers.getBurgers()),
-                () -> Assertions.assertEquals("standard sauce", whatSauce.getSauce()),
-                () -> Assertions.assertEquals("bacon", firstIngredient.getIngredient())
+                () -> Assertions.assertEquals("standard sauce", whatSauce.toString()),
+                () -> Assertions.assertEquals("bacon", firstIngredient.toString())
         );
     }
 }
