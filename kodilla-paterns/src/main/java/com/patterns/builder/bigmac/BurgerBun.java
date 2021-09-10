@@ -14,4 +14,9 @@ public enum BurgerBun {
     public String getBun() {
         return bun;
     }
+
+    @Override
+    public String toString() {
+        return "" + bun;
+    }
 }

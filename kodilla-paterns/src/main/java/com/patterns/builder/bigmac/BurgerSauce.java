@@ -15,4 +15,9 @@ public enum BurgerSauce {
     public String getSauce() {
         return sauce;
     }
+
+    @Override
+    public String toString() {
+        return "" + sauce;
+    }
 }

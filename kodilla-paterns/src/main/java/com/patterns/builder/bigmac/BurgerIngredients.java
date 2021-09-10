@@ -16,4 +16,9 @@ public enum BurgerIngredients {
     public String getIngredient() {
         return ingredient;
     }
+
+    @Override
+    public String toString() {
+        return "" + ingredient;
+    }
 }
