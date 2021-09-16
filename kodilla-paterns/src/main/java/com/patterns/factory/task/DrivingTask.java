@@ -1,7 +1,5 @@
 package com.patterns.factory.task;
 
-import com.patterns.factory.example.Shape;
-
 public class DrivingTask implements Task {
 
     private final String taskName;
