@@ -13,11 +13,13 @@ public class TaskListDaoTestSuite {
 
     @Autowired
     private TaskListDao taskListDao;
+    private static final String TASK_NAME = "Task name";
+    private static final String TASK_DESCRIPTION = "Task - 1";
 
     @Test
     void testFindByListName() {
         //Given
-        TaskList taskList = new TaskList("Task list", "Task - 1");
+        TaskList taskList = new TaskList(TASK_NAME, TASK_DESCRIPTION);
         taskListDao.save(taskList);
         String name = taskList.getListName();
 
@@ -26,10 +28,10 @@ public class TaskListDaoTestSuite {
 
         //Then
         Assertions.assertEquals(1, testTaskList.size());
+        Assertions.assertEquals("Task name", testTaskList.get(0).getListName());
 
         //CleanUp
         int id = testTaskList.get(0).getId();
         taskListDao.deleteById(id);
-
     }
 }
