@@ -27,6 +27,7 @@ public class CheckRows {
         for (int i = 0; i < 3; i++) {
             rowOne.add(element[1][i + 9]);
         }
+        System.out.println("Rozmiar wiersza 1: " + rowOne.size());
         return rowOne;
     }
 
@@ -40,6 +41,7 @@ public class CheckRows {
         for (int i = 0; i < 3; i++) {
             rowTwo.add(element[2][i + 9]);
         }
+        System.out.println("Rozmiar wiersza 2: " + rowTwo.size());
         return rowTwo;
     }
 
@@ -53,6 +55,7 @@ public class CheckRows {
         for (int i = 0; i < 3; i++) {
             rowThree.add(element[3][i + 9]);
         }
+        System.out.println("Rozmiar wiersza 3: " + rowThree.size());
         return rowThree;
     }
 
@@ -66,6 +69,7 @@ public class CheckRows {
         for (int i = 0; i < 3; i++) {
             rowFour.add(element[5][i + 9]);
         }
+        System.out.println("Rozmiar wiersza 4: " + rowFour.size());
         return rowFour;
     }
 
@@ -79,6 +83,7 @@ public class CheckRows {
         for (int i = 0; i < 3; i++) {
             rowFive.add(element[6][i + 9]);
         }
+        System.out.println("Rozmiar wiersza 5: " + rowFive.size());
         return rowFive;
     }
 
@@ -92,6 +97,7 @@ public class CheckRows {
         for (int i = 0; i < 3; i++) {
             rowSix.add(element[7][i + 9]);
         }
+        System.out.println("Rozmiar wiersza 6: " + rowSix.size());
         return rowSix;
     }
 
@@ -105,6 +111,7 @@ public class CheckRows {
         for (int i = 0; i < 3; i++) {
             rowSeven.add(element[9][i + 9]);
         }
+        System.out.println("Rozmiar wiersza 7: " + rowSeven.size());
         return rowSeven;
     }
 
@@ -118,6 +125,7 @@ public class CheckRows {
         for (int i = 0; i < 3; i++) {
             rowEight.add(element[10][i + 9]);
         }
+        System.out.println("Rozmiar wiersza 8: " + rowEight.size());
         return rowEight;
     }
 
@@ -135,6 +143,7 @@ public class CheckRows {
         for (int i = 0; i < 3; i++) {
             rowNine.add(element[11][i + 9]);
         }
+        System.out.println("Rozmiar wiersza 9: " + rowNine.size());
         return rowNine;
     }
 
@@ -152,5 +161,40 @@ public class CheckRows {
         } else {
             return false;
         }
+    }
+    public void clearRowOne() {
+        rowOne.clear();
+    }
+
+    public void clearRowTwo() {
+        rowTwo.clear();
+    }
+
+    public void clearRowThree() {
+        rowThree.clear();
+    }
+
+    public void clearRowFour() {
+        rowFour.clear();
+    }
+
+    public void clearRowFive() {
+        rowFive.clear();
+    }
+
+    public void clearRowSix() {
+        rowSix.clear();
+    }
+
+    public void clearRowSeven() {
+        rowSeven.clear();
+    }
+
+    public void clearRowEight() {
+        rowEight.clear();
+    }
+
+    public void clearRowNine() {
+        rowNine.clear();
     }
 }

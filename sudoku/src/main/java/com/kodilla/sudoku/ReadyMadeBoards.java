@@ -42,6 +42,7 @@ public class ReadyMadeBoards {
             {"9", " 5 ", " 8 ", " 7 ", "|", " 4 ", " 3 ", " 6 ", "|", " 9 ", " 1 ", " 2 "},
     };
 
+    //Błąd w tablicy trzeciej - wypełnić od nowa
     private static final String[][] boardThree = {
             {" ", " 1 ", " 2 ", " 3 ", "|", " 4 ", " 5 ", " 6 ", "|", " 7 ", " 8 ", " 9 "},
             {"1", " 5 ", " 3 ", " 4 ", "|", " 6 ", " 7 ", " 2 ", "|", " 5 ", " 8 ", " 7 "},
@@ -57,6 +58,8 @@ public class ReadyMadeBoards {
             {"9", " 2 ", " 1 ", " 9 ", "|", " 6 ", " 8 ", " 2 ", "|", " 3 ", " 7 ", " 9 "},
     };
 
+    //Błąd w planszy czwartej w kolumnie pierwszej powtarza się 1 i 8 w kolumnie w rzędzie 7 powtarzaja się 7
+    //Wypełnić tablicę od nowa
     private static final String[][] boardFour = {
             {" ", " 1 ", " 2 ", " 3 ", "|", " 4 ", " 5 ", " 6 ", "|", " 7 ", " 8 ", " 9 "},
             {"1", " 2 ", " 8 ", " 3 ", "|", " 6 ", " 3 ", " 7 ", "|", " 5 ", " 2 ", " 1 "},

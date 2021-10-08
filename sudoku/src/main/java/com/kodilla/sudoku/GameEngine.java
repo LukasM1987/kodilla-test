@@ -30,28 +30,22 @@ public class GameEngine {
         int randomBoard = random.nextInt(5) + 1;
 
         //POPRAWIC WYGENEROWANIE GOTOWEGO SUDOKU
-        boolean loopLaps = true;
-        String[][] solved = readySolvedBoard.generateSolvedBoard();
-        System.out.println();
-        collections(solved);
-        if (!checkSquares.checkAllSquare() && !checkRows.checkAllRows()
-                && !checkColumns.checkAllColumns()) {
-            collectionsClear(solved);
-            int j = 0;
-            do {
-                j++;
-                solved = readySolvedBoard.generateSolvedBoard();
-                collections(solved);
-                System.out.println("Pętla nr: " + j);
-                if (checkSquares.checkAllSquare()
-                        && checkRows.checkAllRows()
-                        && checkColumns.checkAllColumns()) {
-                    loopLaps = false;
-                    collectionsClear(solved);
-                }
+        /*
+        boolean boardGeneratorLoop = true;
+        while (boardGeneratorLoop) {
+            String[][] solved = readySolvedBoard.generateSolvedBoard();
+            collections(solved);
+            if (checkRows.checkAllRows() && checkColumns.checkAllColumns()) {
+                boardGeneratorLoop = false;
+                readySolvedBoard.printSolvedSudoku(solved);
                 collectionsClear(solved);
-            } while (loopLaps);
+            } else {
+                collectionsClear(solved);
+            }
+            collectionsClear(solved);
         }
+
+         */
 
 
         menu.welcome();
@@ -133,6 +127,7 @@ public class GameEngine {
     }
 
     private void collectionsClear(String[][] board) {
+        /*
         checkSquares.addElementToSquareOneSet(board).clear();
         checkSquares.addElementToSquareTwoSet(board).clear();
         checkSquares.addElementToSquareThreeSet(board).clear();
@@ -162,6 +157,28 @@ public class GameEngine {
         checkColumns.addElementToColumnSevenSet(board).clear();
         checkColumns.addElementToColumnEightSet(board).clear();
         checkColumns.addElementToColumnNineSet(board).clear();
+
+         */
+
+        checkRows.clearRowOne();
+        checkRows.clearRowTwo();
+        checkRows.clearRowThree();
+        checkRows.clearRowFour();
+        checkRows.clearRowFive();
+        checkRows.clearRowSix();
+        checkRows.clearRowSeven();
+        checkRows.clearRowEight();
+        checkRows.clearRowNine();
+
+        checkColumns.clearColumnOne();
+        checkColumns.clearColumnTwo();
+        checkColumns.clearColumnThree();
+        checkColumns.clearColumnFour();
+        checkColumns.clearColumnFive();
+        checkColumns.clearColumnSix();
+        checkColumns.clearColumnSeven();
+        checkColumns.clearColumnEight();
+        checkColumns.clearColumnNine();
     }
 
     private void generateUnsolvedBoard(int randomBoard) {

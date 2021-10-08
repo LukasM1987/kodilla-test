@@ -59,10 +59,10 @@ public class ReadyBoard {
         return readyBoard;
     }
 
-    public void printSolvedSudoku() {
-        for (int i = 0; i < readyBoard.length; i++) {
-            for (int j = 0; j < readyBoard.length; j++) {
-                System.out.print(readyBoard[i][j]);
+    public void printSolvedSudoku(String[][] solved) {
+        for (int i = 0; i < solved.length; i++) {
+            for (int j = 0; j < solved.length; j++) {
+                System.out.print(solved[i][j]);
             }
             System.out.println();
         }

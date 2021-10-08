@@ -27,6 +27,7 @@ public class CheckColumns {
         for (int i = 0; i < 3; i++) {
             columnOne.add(element[i + 9][1]);
         }
+        System.out.println("Rozmiar kolumny 1: " + columnOne.size());
         return columnOne;
     }
 
@@ -40,6 +41,7 @@ public class CheckColumns {
         for (int i = 0; i < 3; i++) {
             columnTwo.add(element[i + 9][2]);
         }
+        System.out.println("Rozmiar kolumny 2: " + columnTwo.size());
         return columnTwo;
     }
 
@@ -53,6 +55,7 @@ public class CheckColumns {
         for (int i = 0; i < 3; i++) {
             columnThree.add(element[i + 9][3]);
         }
+        System.out.println("Rozmiar kolumny 3: " + columnThree.size());
         return columnThree;
     }
 
@@ -66,6 +69,7 @@ public class CheckColumns {
         for (int i = 0; i < 3; i++) {
             columnFour.add(element[i + 9][5]);
         }
+        System.out.println("Rozmiar kolumny 4: " + columnFour.size());
         return columnFour;
     }
 
@@ -79,6 +83,7 @@ public class CheckColumns {
         for (int i = 0; i < 3; i++) {
             columnFive.add(element[i + 9][6]);
         }
+        System.out.println("Rozmiar kolumny 5: " + columnFive.size());
         return columnFive;
     }
 
@@ -92,6 +97,7 @@ public class CheckColumns {
         for (int i = 0; i < 3; i++) {
             columnSix.add(element[i + 9][7]);
         }
+        System.out.println("Rozmiar kolumny 6: " + columnSix.size());
         return columnSix;
     }
 
@@ -105,6 +111,7 @@ public class CheckColumns {
         for (int i = 0; i < 3; i++) {
             columnSeven.add(element[i + 9][9]);
         }
+        System.out.println("Rozmiar kolumny 7: " + columnSeven.size());
         return columnSeven;
     }
 
@@ -118,6 +125,7 @@ public class CheckColumns {
         for (int i = 0; i < 3; i++) {
             columnEight.add(element[i + 9][10]);
         }
+        System.out.println("Rozmiar kolumny 8: " + columnEight.size());
         return columnEight;
     }
 
@@ -131,6 +139,7 @@ public class CheckColumns {
         for (int i = 0; i < 3; i++) {
             columnNine.add(element[i + 9][11]);
         }
+        System.out.println("Rozmiar kolumny 9: " + columnNine.size());
         return columnNine;
     }
 
@@ -148,5 +157,41 @@ public class CheckColumns {
         } else {
             return false;
         }
+    }
+
+    public void clearColumnOne() {
+        columnOne.clear();
+    }
+
+    public void clearColumnTwo() {
+        columnTwo.clear();
+    }
+
+    public void clearColumnThree() {
+        columnThree.clear();
+    }
+
+    public void clearColumnFour() {
+        columnFour.clear();
+    }
+
+    public void clearColumnFive() {
+        columnFive.clear();
+    }
+
+    public void clearColumnSix() {
+        columnSix.clear();
+    }
+
+    public void clearColumnSeven() {
+        columnSeven.clear();
+    }
+
+    public void clearColumnEight() {
+        columnEight.clear();
+    }
+
+    public void clearColumnNine() {
+        columnNine.clear();
     }
 }
