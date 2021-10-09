@@ -30,22 +30,19 @@ public class GameEngine {
         int randomBoard = random.nextInt(5) + 1;
 
         //POPRAWIC WYGENEROWANIE GOTOWEGO SUDOKU
-        /*
         boolean boardGeneratorLoop = true;
         while (boardGeneratorLoop) {
             String[][] solved = readySolvedBoard.generateSolvedBoard();
             collections(solved);
-            if (checkRows.checkAllRows() && checkColumns.checkAllColumns()) {
+            if (checkSquares.checkAllSquare() && checkRows.checkAllRows() && checkColumns.checkAllColumns()) {
                 boardGeneratorLoop = false;
                 readySolvedBoard.printSolvedSudoku(solved);
                 collectionsClear(solved);
-            } else {
-                collectionsClear(solved);
             }
+            readySolvedBoard.clearLists();
             collectionsClear(solved);
         }
 
-         */
 
 
         menu.welcome();
@@ -60,8 +57,8 @@ public class GameEngine {
             }
             if (playerMove.equals(SudokuElements.SUDOKU_SOLVE.getElement())) {
                 gameRun = false;
-                //readySolvedBoard.printSolvedSudoku();
-                readyMadeBoards.chooseBoard(randomBoard);
+                readySolvedBoard.printSolvedSudoku(board.newBoard());
+                //readyMadeBoards.chooseBoard(randomBoard);
                 menu.failure();
             } else if (playerMove.equals(SudokuElements.FINISH.getElement())) {
                 collections(board.newBoard());
@@ -190,8 +187,8 @@ public class GameEngine {
                 xPos = random.nextInt(board.newBoard().length);
                 yPos = random.nextInt(board.newBoard().length);
             }
-            //board.newBoard()[yPos][xPos] = readySolvedBoard.getReadySolvedBoard()[yPos][xPos];
-            board.newBoard()[yPos][xPos] = readyMadeBoards.randomBoard(randomBoard)[yPos][xPos];
+            board.newBoard()[yPos][xPos] = readySolvedBoard.getReadySolvedBoard()[yPos][xPos];
+            //board.newBoard()[yPos][xPos] = readyMadeBoards.randomBoard(randomBoard)[yPos][xPos];
         }
         board.drawBoard(board.newBoard());
     }

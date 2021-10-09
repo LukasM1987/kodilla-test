@@ -68,6 +68,26 @@ public class ReadyBoard {
         }
     }
 
+    public void clearLists() {
+        numbersSquareOne.clear();
+        elementsSquareOne.clear();
+        numbersSquareTwo.clear();
+        elementsSquareTwo.clear();
+        numbersSquareThree.clear();
+        elementsSquareThree.clear();
+        numbersSquareFour.clear();
+        elementsSquareFour.clear();
+        numbersSquareFive.clear();
+        elementsSquareFive.clear();
+        numbersSquareSix.clear();
+        elementsSquareSix.clear();
+        numbersSquareSeven.clear();
+        elementsSquareSeven.clear();
+        numbersSquareEight.clear();
+        elementsSquareEight.clear();
+        numbersSquareNine.clear();
+        elementsSquareNine.clear();
+    }
 
     private String[][] generateSquareOne() {
         boolean loopRun = true;
@@ -548,26 +568,6 @@ public class ReadyBoard {
         return readyBoard;
     }
 
-    private void clearLists() {
-        numbersSquareOne.clear();
-        elementsSquareOne.clear();
-        numbersSquareTwo.clear();
-        elementsSquareTwo.clear();
-        numbersSquareThree.clear();
-        elementsSquareThree.clear();
-        numbersSquareFour.clear();
-        elementsSquareFour.clear();
-        numbersSquareFive.clear();
-        elementsSquareFive.clear();
-        numbersSquareSix.clear();
-        elementsSquareSix.clear();
-        numbersSquareSeven.clear();
-        elementsSquareSeven.clear();
-        numbersSquareEight.clear();
-        elementsSquareEight.clear();
-        numbersSquareNine.clear();
-        elementsSquareNine.clear();
-    }
     //UZYWAJAC KOLEKCJI HASHSET:
     //JEZELI ROZMIAR KAZDEGO Z KWADRATÓW NIE JEST RÓWNY 9
     //I ROZMIAR KAZDEGO RZEDU I KAZDEJ KOLUMNY TEZ NIE JEST ROWNY 9
