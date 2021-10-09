@@ -18,12 +18,12 @@ public class Item {
     public Item() {
     }
 
-    public Item(Product product, Invoice invoice, BigDecimal price, int quantity, BigDecimal value) {
+    public Item(Product product, Invoice invoice, BigDecimal price, int quantity) {
         this.product = product;
         this.invoice = invoice;
         this.price = price;
         this.quantity = quantity;
-        this.value = value;
+        this.value = price.multiply(new BigDecimal(quantity));
     }
 
     @Id
@@ -34,7 +34,7 @@ public class Item {
         return id;
     }
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "PRODUCT_ID")
     public Product getProduct() {
         return product;

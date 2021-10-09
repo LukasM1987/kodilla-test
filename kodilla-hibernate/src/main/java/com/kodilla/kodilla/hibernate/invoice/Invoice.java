@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 @Entity
-@Table(name = "INVOICE")
+@Table(name = "INVOICES")
 public class Invoice {
     private int id;
     private String number;

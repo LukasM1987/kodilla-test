@@ -17,6 +17,7 @@ public class InvoiceDaoTestSuite {
     @Test
     public void testInvoiceDaoSave() {
         //Given
+
         Invoice invoice = new Invoice("1");
         Product product1 = new Product("Product 1");
         Product product2 = new Product("Product 2");
@@ -24,14 +25,14 @@ public class InvoiceDaoTestSuite {
         Product product4 = new Product("Product 4");
         Product product5 = new Product("Product 5");
         Product product6 = new Product("Product 6");
-        Item item1 = new Item(product1, invoice, new BigDecimal("5"), 2, new BigDecimal(10));
-        Item item2 = new Item(product2, invoice, new BigDecimal("4"), 5, new BigDecimal(10));
-        Item item3 = new Item(product3, invoice, new BigDecimal("4"), 25, new BigDecimal(10));
-        Item item4 = new Item(product4, invoice, new BigDecimal("15"), 45, new BigDecimal(10));
-        Item item5 = new Item(product4, invoice, new BigDecimal("14"), 5, new BigDecimal(10));
-        Item item6 = new Item(product5, invoice, new BigDecimal("13"), 4, new BigDecimal(10));
-        Item item7 = new Item(product6, invoice, new BigDecimal("12"), 3, new BigDecimal(10));
-        Item item8 = new Item(product6, invoice, new BigDecimal("11"), 2, new BigDecimal(10));
+        Item item1 = new Item(product1, invoice, new BigDecimal("5"), 2);
+        Item item2 = new Item(product2, invoice, new BigDecimal("4"), 5);
+        Item item3 = new Item(product3, invoice, new BigDecimal("4"), 25);
+        Item item4 = new Item(product4, invoice, new BigDecimal("15"), 45);
+        Item item5 = new Item(product4, invoice, new BigDecimal("14"), 5);
+        Item item6 = new Item(product5, invoice, new BigDecimal("13"), 4);
+        Item item7 = new Item(product6, invoice, new BigDecimal("12"), 3);
+        Item item8 = new Item(product6, invoice, new BigDecimal("11"), 2);
         invoice.getItems().add(item1);
         invoice.getItems().add(item2);
         invoice.getItems().add(item3);
@@ -42,8 +43,7 @@ public class InvoiceDaoTestSuite {
         invoice.getItems().add(item8);
 
         //When
-        invoiceDao.save(invoice);
-        int invoiceId = invoice.getId();
+        int invoiceId = invoiceDao.save(invoice).getId();
 
         //Then
         Assertions.assertNotEquals(0, invoiceId);
