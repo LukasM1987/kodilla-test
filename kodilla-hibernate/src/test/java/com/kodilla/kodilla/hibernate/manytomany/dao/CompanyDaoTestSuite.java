@@ -92,7 +92,7 @@ class CompanyDaoTestSuite {
         companyDao.save(greyMatter);
 
         //When
-        List<Employee> employees = employeeDao.findByeLastName("Kovalsky");
+        List<Employee> employees = employeeDao.findByLastName("Kovalsky");
 
         //Then
         assertEquals(1, employees.size());
@@ -137,8 +137,8 @@ class CompanyDaoTestSuite {
 
         //Then
         assertEquals(1, companies.size());
-        assertEquals("Dat", companies.get(0).getName());
-        assertNotEquals("Sof", companies.get(0).getName());
+        assertEquals("Data Maesters", companies.get(0).getName());
+        assertNotEquals("Software Machine", companies.get(0).getName());
 
         //CleanUp
         companyDao.delete(softwareMachine);

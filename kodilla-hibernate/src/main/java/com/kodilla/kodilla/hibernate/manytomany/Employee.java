@@ -10,6 +10,7 @@ import java.util.List;
         query = "FROM Employee WHERE lastname = :LASTNAME"
 )
 
+
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
