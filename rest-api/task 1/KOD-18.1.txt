@@ -1,0 +1,11 @@
+{
+"vehicleModel":"c32 amg",
+"brand":"Mercedes-Benz",
+"vehicleSeats":[
+"seatOne":{"material":"leather", "color":"black"},
+"seatTwo":{"material":"leather", "color":"black"},
+"seatThree":{"material":"leather", "color":"black"},
+"seatFour":{"material":"leather", "color":"black"}
+],
+"engine":3.199
+}
