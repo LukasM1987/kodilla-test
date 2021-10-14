@@ -1,11 +1,23 @@
 {
-"vehicleModel":"c32 amg",
-"brand":"Mercedes-Benz",
-"vehicleSeats":[
-"seat":{"material":"leather", "color":"black"},
-"seat":{"material":"leather", "color":"black"},
-"seat":{"material":"leather", "color":"black"},
-"seat":{"material":"leather", "color":"black"}
-],
-"engine":3.199
+  "model": "c32 amg",
+  "brand": "Mercedes-Benz",
+  "vehicleSeats": [
+    "seat": {
+      "material": "leather",
+      "color": "black"
+    },
+    "seat": {
+      "material": "leather",
+      "color": "black"
+    },
+    "seat": {
+      "material": "leather",
+      "color": "black"
+    },
+    "seat": {
+      "material": "leather",
+      "color": "black"
+    }
+  ],
+  "engine": 3.199
 }
