@@ -18,64 +18,64 @@ public class CheckRows {
     private final Set<Integer> rowNine = new HashSet<>();
 
     public Set<Integer> addElementToRowOneSet(int[][] element) {
-        for (int i = 0; i < 9; i++) {
-            rowOne.add(element[0][i]);
+        for (int i = 0; i < ROWS_MAX_SIZE; i++) {
+            rowOne.add(element[ElementPosition.ZERO.getElement()][i]);
         }
         return rowOne;
     }
 
     public Set<Integer> addElementToRowTwoSet(int[][] element) {
-        for (int i = 0; i < 9; i++) {
-            rowTwo.add(element[1][i]);
+        for (int i = 0; i < ROWS_MAX_SIZE; i++) {
+            rowTwo.add(element[ElementPosition.ONE.getElement()][i]);
         }
         return rowTwo;
     }
 
     public Set<Integer> addElementToRowThreeSet(int[][] element) {
-        for (int i = 0; i < 9; i++) {
-            rowThree.add(element[2][i]);
+        for (int i = 0; i < ROWS_MAX_SIZE; i++) {
+            rowThree.add(element[ElementPosition.TWO.getElement()][i]);
         }
         return rowThree;
     }
 
     public Set<Integer> addElementToRowFourSet(int[][] element) {
-        for (int i = 0; i < 9; i++) {
-            rowFour.add(element[3][i]);
+        for (int i = 0; i < ROWS_MAX_SIZE; i++) {
+            rowFour.add(element[ElementPosition.THREE.getElement()][i]);
         }
         return rowFour;
     }
 
     public Set<Integer> addElementToRowFiveSet(int[][] element) {
-        for (int i = 0; i < 9; i++) {
-            rowFive.add(element[4][i]);
+        for (int i = 0; i < ROWS_MAX_SIZE; i++) {
+            rowFive.add(element[ElementPosition.FOUR.getElement()][i]);
         }
         return rowFive;
     }
 
     public Set<Integer> addElementToRowSixSet(int[][] element) {
-        for (int i = 0; i < 9; i++) {
-            rowSix.add(element[5][i]);
+        for (int i = 0; i < ROWS_MAX_SIZE; i++) {
+            rowSix.add(element[ElementPosition.FIVE.getElement()][i]);
         }
         return rowSix;
     }
 
     public Set<Integer> addElementToRowSevenSet(int[][] element) {
-        for (int i = 0; i < 9; i++) {
-            rowSeven.add(element[6][i]);
+        for (int i = 0; i < ROWS_MAX_SIZE; i++) {
+            rowSeven.add(element[ElementPosition.SIX.getElement()][i]);
         }
         return rowSeven;
     }
 
     public Set<Integer> addElementToRowEightSet(int[][] element) {
-        for (int i = 0; i < 9; i++) {
-            rowEight.add(element[7][i]);
+        for (int i = 0; i < ROWS_MAX_SIZE; i++) {
+            rowEight.add(element[ElementPosition.SEVEN.getElement()][i]);
         }
         return rowEight;
     }
 
     public Set<Integer> addElementToRowNineSet(int[][] element) {
-        for (int i = 0; i < 9; i++) {
-            rowNine.add(element[8][i]);
+        for (int i = 0; i < ROWS_MAX_SIZE; i++) {
+            rowNine.add(element[ElementPosition.EIGHT.getElement()][i]);
         }
         return rowNine;
     }

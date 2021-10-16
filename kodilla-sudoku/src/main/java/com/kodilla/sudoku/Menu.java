@@ -3,6 +3,11 @@ package com.kodilla.sudoku;
 public class Menu implements MenuInterface {
 
     @Override
+    public void addFile() {
+        System.out.print("Please enter a file name (with .txt): ");
+    }
+
+    @Override
     public void welcome() {
     System.out.println("Welcome to the sudoku game!");
 }

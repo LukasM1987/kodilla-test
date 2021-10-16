@@ -25,6 +25,15 @@ public class Solver {
         return true;
     }
 
+    public void printBoard(int[][] board) {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board.length; j++) {
+                System.out.print(board[i][j]);
+            }
+            System.out.println();
+        }
+    }
+
     private static boolean isnNumberInRow(int[][] board, int number, int row) {
         for (int i = 0; i < SIZE; i++) {
             if (board[row][i] == number) {

@@ -18,64 +18,64 @@ public class CheckColumns {
     private final Set<Integer> columnNine = new HashSet<>();
 
     public Set<Integer> addElementToColumnOneSet(int[][] element) {
-        for (int i = 0; i < 9; i++) {
-            columnOne.add(element[i][0]);
+        for (int i = 0; i < COLUMN_MAX_SIZE; i++) {
+            columnOne.add(element[i][ElementPosition.ZERO.getElement()]);
         }
         return columnOne;
     }
 
     public Set<Integer> addElementToColumnTwoSet(int[][] element) {
-        for (int i = 0; i < 9; i++) {
-            columnTwo.add(element[i][1]);
+        for (int i = 0; i < COLUMN_MAX_SIZE; i++) {
+            columnTwo.add(element[i][ElementPosition.ONE.getElement()]);
         }
         return columnTwo;
     }
 
     public Set<Integer> addElementToColumnThreeSet(int[][] element) {
-        for (int i = 0; i < 9; i++) {
-            columnThree.add(element[i][2]);
+        for (int i = 0; i < COLUMN_MAX_SIZE; i++) {
+            columnThree.add(element[i][ElementPosition.TWO.getElement()]);
         }
         return columnThree;
     }
 
     public Set<Integer> addElementToColumnFourSet(int[][] element) {
-        for (int i = 0; i < 9; i++) {
-            columnFour.add(element[i][3]);
+        for (int i = 0; i < COLUMN_MAX_SIZE; i++) {
+            columnFour.add(element[i][ElementPosition.THREE.getElement()]);
         }
         return columnFour;
     }
 
     public Set<Integer> addElementToColumnFiveSet(int[][] element) {
-        for (int i = 0; i < 9; i++) {
-            columnFive.add(element[i][4]);
+        for (int i = 0; i < COLUMN_MAX_SIZE; i++) {
+            columnFive.add(element[i][ElementPosition.FOUR.getElement()]);
         }
         return columnFive;
     }
 
     public Set<Integer> addElementToColumnSixSet(int[][] element) {
         for (int i = 0; i < 9; i++) {
-            columnSix.add(element[i][5]);
+            columnSix.add(element[i][ElementPosition.FIVE.getElement()]);
         }
         return columnSix;
     }
 
     public Set<Integer> addElementToColumnSevenSet(int[][] element) {
-        for (int i = 0; i < 9; i++) {
-            columnSeven.add(element[i][6]);
+        for (int i = 0; i < COLUMN_MAX_SIZE; i++) {
+            columnSeven.add(element[i][ElementPosition.SIX.getElement()]);
         }
         return columnSeven;
     }
 
     public Set<Integer> addElementToColumnEightSet(int[][] element) {
-        for (int i = 0; i < 9; i++) {
-            columnEight.add(element[i][7]);
+        for (int i = 0; i < COLUMN_MAX_SIZE; i++) {
+            columnEight.add(element[i][ElementPosition.SEVEN.getElement()]);
         }
         return columnEight;
     }
 
     public Set<Integer> addElementToColumnNineSet(int[][] element) {
-        for (int i = 0; i < 9; i++) {
-            columnNine.add(element[i][8]);
+        for (int i = 0; i < COLUMN_MAX_SIZE; i++) {
+            columnNine.add(element[i][ElementPosition.EIGHT.getElement()]);
         }
         return columnNine;
     }

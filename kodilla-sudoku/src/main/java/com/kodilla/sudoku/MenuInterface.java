@@ -12,4 +12,5 @@ public interface MenuInterface {
     void failure();
     void mistake();
     void unsolvable();
+    void addFile();
 }

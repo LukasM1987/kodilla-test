@@ -11,7 +11,7 @@ public class Player {
     private int vertical;
 
     public String playerMove() {
-        move = scanner.next();
+        move = scanner.nextLine();
         return move;
     }
 

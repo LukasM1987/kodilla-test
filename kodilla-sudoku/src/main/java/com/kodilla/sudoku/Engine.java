@@ -1,30 +1,31 @@
 package com.kodilla.sudoku;
 
-import java.util.Random;
-
 public class Engine {
 
     private static final Menu menu = new Menu();
     private static final Board board = new Board();
     private static final Player player = new Player();
-    private static final Random random = new Random();
     private static final Solver solver = new Solver();
     private static final SudokuElementsList sudokuElementsList = new SudokuElementsList();
     private static final CheckSquares checkSquares = new CheckSquares();
     private static final CheckColumns checkColumns = new CheckColumns();
     private static final CheckRows checkRows = new CheckRows();
-    private static final int INITIAL_MAX_ELEMENTS = 10;
-    private static final int ZERO_POS = 0;
+    private static final SudokuReader sudokuReader = new SudokuReader();
 
     private boolean gameRun = true;
     private String playerMove;
+    private String sudokuBoardName;
     private int number;
     private int xPos;
     private int yPos;
 
     public void gameLoop() {
         menu.welcome();
-        generateUnsolvedBoard();
+        menu.addFile();
+        sudokuBoardName = player.playerMove();
+        sudokuReader.readFile(sudokuBoardName);
+        sudokuReader.boardConverter();
+        sudokuReader.print();
         while (gameRun) {
             menu.addElement();
             playerMove = player.playerMove();
@@ -34,21 +35,20 @@ public class Engine {
             }
             if (playerMove.equals(SudokuChoice.SUDOKU.getChoice())) {
                 gameRun = false;
-                if (solver.solveBoard(board.getBoard())) {
+                if (solver.solveBoard(sudokuReader.boardConverter())) {
                     menu.failure();
-                    board.drawBoard(board.getBoard());
-                } else {
-                    menu.unsolvable();
+                    board.drawBoard(sudokuReader.getBoard());
+                } else { menu.unsolvable();
                 }
             } else if (playerMove.equals(SudokuChoice.FINISH.getChoice())) {
-                collections(board.getBoard());
+                collections(sudokuReader.getBoard());
                 if (checkSquares.checkSquare()
                         && checkRows.checkAllRows()
                         && checkColumns.checkAllColumns()) {
                     menu.congratulations();
                     gameRun = false;
                 } else {
-                    collectionsCleaner(board.getBoard());
+                    collectionsCleaner(sudokuReader.getBoard());
                     menu.mistake();
                 }
             } else {
@@ -65,7 +65,7 @@ public class Engine {
                     menu.addYNumberPosition();
                     yPos = player.playerYPosition();
                 }
-                board.drawBoard(board.addElementBoard(xPos, yPos, number));
+                board.drawBoard(sudokuReader.addElementBoard(xPos, yPos, number));
             }
         }
     }
@@ -132,18 +132,5 @@ public class Engine {
         checkColumns.addElementToColumnSevenSet(board).clear();
         checkColumns.addElementToColumnEightSet(board).clear();
         checkColumns.addElementToColumnNineSet(board).clear();
-    }
-
-    private void generateUnsolvedBoard() {
-        for (int i = 0; i < INITIAL_MAX_ELEMENTS; i++) {
-            xPos = random.nextInt(board.getBoard().length);
-            yPos = random.nextInt(board.getBoard().length);
-            while (xPos == ZERO_POS || yPos == ZERO_POS) {
-                xPos = random.nextInt(board.getBoard().length);
-                yPos = random.nextInt(board.getBoard().length);
-            }
-            board.getBoard()[yPos][xPos] = random.nextInt(9) + 1;
-        }
-        board.drawBoard(board.getBoard());
     }
 }
