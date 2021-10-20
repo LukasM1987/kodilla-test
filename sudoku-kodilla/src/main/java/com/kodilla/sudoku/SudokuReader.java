@@ -20,13 +20,16 @@ public class SudokuReader {
 
     public void readFile(String fileName) throws RowException {
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader("kodilla-sudoku/src/main/resources/sudoku/" + fileName));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader("sudoku-kodilla/src/main/resources/sudoku/" + fileName));
             String row;
             while ((row = bufferedReader.readLine()) != null) {
                 toList().add(row);
                 if (row.length() != ROW_SIZE) {
                     throw new RowException("The line doesn't have nine numbers!");
                 }
+            }
+            if (toList().size() != ROW_SIZE) {
+                throw new RowException("File doesn't have nine lines!");
             }
             bufferedReader.close();
         } catch (IOException e) {
@@ -56,10 +59,10 @@ public class SudokuReader {
         return null;
     }
 
-    public void print () {
-        for (int i = 0; i < unsolvedBoard.length; i++) {
-            for (int j = 0; j < unsolvedBoard.length; j++) {
-                System.out.print(unsolvedBoard[i][j]);
+    public void print (int[][] board) {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board.length; j++) {
+                System.out.print(board[i][j]);
             }
             System.out.println();
         }

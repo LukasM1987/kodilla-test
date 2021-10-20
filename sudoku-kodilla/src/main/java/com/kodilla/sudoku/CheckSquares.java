@@ -5,159 +5,42 @@ import java.util.Set;
 public class CheckSquares {
 
     private static final int SQUARE_MAX_SIZE = 9;
-    private static final int LOOP_LAPS_THREE = 3;
-    private static final int LOOP_LAPS_SIX = 6;
-    private static final int LOOP_LAPS_NINE = 9;
+    private static final int SQUARE_LENGTH = 3;
+    private static final int SQUARE_MOVE_NEXT_POSITION = 3;
 
-    private final Set<Integer> squareOne = new HashSet<>();
-    private final Set<Integer> squareTwo = new HashSet<>();
-    private final Set<Integer> squareThree = new HashSet<>();
-    private final Set<Integer> squareFour = new HashSet<>();
-    private final Set<Integer> squareFive = new HashSet<>();
-    private final Set<Integer> squareSix = new HashSet<>();
-    private final Set<Integer> squareSeven = new HashSet<>();
-    private final Set<Integer> squareEight = new HashSet<>();
-    private final Set<Integer> squareNine = new HashSet<>();
+    private final Set<Integer> squareNumbers = new HashSet<>();
 
-    public Set<Integer> addElementToSquareOneSet(int[][] element) {
-        for (int i = 0; i < LOOP_LAPS_THREE; i++) {
-            squareOne.add(element[ElementPosition.ZERO.getElement()][i]);
+    public boolean checkAllSquares(int[][] element) {
+        for (int squareVertical = 0; squareVertical < SQUARE_MAX_SIZE; squareVertical += SQUARE_MOVE_NEXT_POSITION) {
+            if (initSquareHorizontal(element, squareVertical)) return false;
         }
-        for (int i = 0; i < LOOP_LAPS_THREE; i++) {
-            squareOne.add(element[ElementPosition.ONE.getElement()][i]);
-        }
-        for (int i = 0; i < LOOP_LAPS_THREE; i++) {
-            squareOne.add(element[ElementPosition.TWO.getElement()][i]);
-        }
-        return squareOne;
+        return true;
     }
 
-    public Set<Integer> addElementToSquareTwoSet(int[][] element) {
-        for (int i = 0; i < LOOP_LAPS_THREE; i++) {
-            squareTwo.add(element[i][ElementPosition.THREE.getElement()]);
+    private boolean initSquareHorizontal(int[][] element, int squareVertical) {
+        for (int squareHorizontal = 0; squareHorizontal < SQUARE_MAX_SIZE; squareHorizontal += SQUARE_MOVE_NEXT_POSITION) {
+            if (checkSmallSquareVertical(element, squareVertical, squareHorizontal)) return true;
         }
-        for (int i = 0; i < LOOP_LAPS_THREE; i++) {
-            squareTwo.add(element[i][ElementPosition.FOUR.getElement()]);
-        }
-        for (int i = 0; i < LOOP_LAPS_THREE; i++) {
-            squareTwo.add(element[i][ElementPosition.FIVE.getElement()]);
-        }
-        return squareTwo;
+        return false;
     }
 
-    public Set<Integer> addElementToSquareThreeSet(int[][] element) {
-        for (int i = 0; i < LOOP_LAPS_THREE; i++) {
-            squareThree.add(element[i][ElementPosition.SIX.getElement()]);
+    private boolean checkSmallSquareVertical(int[][] element, int squareVertical, int squareHorizontal) {
+        for (int i = squareVertical; i < SQUARE_LENGTH + squareVertical; i++) {
+            if (checkSmallSquareHorizontal(element[i], i == SQUARE_LENGTH - 1 + squareVertical, squareHorizontal)) return true;
         }
-        for (int i = 0; i < LOOP_LAPS_THREE; i++) {
-            squareThree.add(element[i][ElementPosition.SEVEN.getElement()]);
-        }
-        for (int i = 0; i < LOOP_LAPS_THREE; i++) {
-            squareThree.add(element[i][ElementPosition.EIGHT.getElement()]);
-        }
-        return squareThree;
+        squareNumbers.clear();
+        return false;
     }
 
-    public Set<Integer> addElementToSquareFourSet(int[][] element) {
-        for (int i = 3; i < LOOP_LAPS_SIX; i++) {
-            squareFour.add(element[i][ElementPosition.ZERO.getElement()]);
+    private boolean checkSmallSquareHorizontal(int[] ints, boolean b, int squareHorizontal) {
+        for (int j = squareHorizontal; j < SQUARE_LENGTH + squareHorizontal; j++) {
+            squareNumbers.add(ints[j]);
         }
-        for (int i = 3; i < LOOP_LAPS_SIX; i++) {
-            squareFour.add(element[i][ElementPosition.ONE.getElement()]);
+        if (b) {
+            if (squareNumbers.size() != SQUARE_MAX_SIZE || squareNumbers.contains(0)) {
+                return true;
+            }
         }
-        for (int i = 3; i < LOOP_LAPS_SIX; i++) {
-            squareFour.add(element[i][ElementPosition.TWO.getElement()]);
-        }
-        return squareFour;
-    }
-
-    public Set<Integer> addElementToSquareFiveSet(int[][] element) {
-        for (int i = 3; i < LOOP_LAPS_SIX; i++) {
-            squareFive.add(element[i][ElementPosition.THREE.getElement()]);
-        }
-        for (int i = 3; i < LOOP_LAPS_SIX; i++) {
-            squareFive.add(element[i][ElementPosition.FOUR.getElement()]);
-        }
-        for (int i = 3; i < LOOP_LAPS_SIX; i++) {
-            squareFive.add(element[i][ElementPosition.FIVE.getElement()]);
-        }
-        return squareFive;
-    }
-
-    public Set<Integer> addElementToSquareSixSet(int[][] element) {
-        for (int i = 3; i < LOOP_LAPS_SIX; i++) {
-            squareSix.add(element[i][ElementPosition.SIX.getElement()]);
-        }
-        for (int i = 3; i < LOOP_LAPS_SIX; i++) {
-            squareSix.add(element[i][ElementPosition.SEVEN.getElement()]);
-        }
-        for (int i = 3; i < LOOP_LAPS_SIX; i++) {
-            squareSix.add(element[i][ElementPosition.EIGHT.getElement()]);
-        }
-        return squareSix;
-    }
-
-    public Set<Integer> addElementToSquareSevenSet(int[][] element) {
-        for (int i = 6; i < LOOP_LAPS_NINE; i++) {
-            squareSeven.add(element[i][ElementPosition.ZERO.getElement()]);
-        }
-        for (int i = 6; i < LOOP_LAPS_NINE; i++) {
-            squareSeven.add(element[i][ElementPosition.ONE.getElement()]);
-        }
-        for (int i = 6; i < LOOP_LAPS_NINE; i++) {
-            squareSeven.add(element[i][ElementPosition.TWO.getElement()]);
-        }
-        return squareSeven;
-    }
-
-    public Set<Integer> addElementToSquareEightSet(int[][] element) {
-        for (int i = 6; i < LOOP_LAPS_NINE; i++) {
-            squareEight.add(element[i][ElementPosition.THREE.getElement()]);
-        }
-        for (int i = 6; i < LOOP_LAPS_NINE; i++) {
-            squareEight.add(element[i][ElementPosition.FOUR.getElement()]);
-        }
-        for (int i = 6; i < LOOP_LAPS_NINE; i++) {
-            squareEight.add(element[i][ElementPosition.FIVE.getElement()]);
-        }
-        return squareEight;
-    }
-
-    public Set<Integer> addElementToSquareNineSet(int[][] element) {
-        for (int i = 6; i < LOOP_LAPS_NINE; i++) {
-            squareNine.add(element[i][ElementPosition.SIX.getElement()]);
-        }
-        for (int i = 6; i < LOOP_LAPS_NINE; i++) {
-            squareNine.add(element[i][ElementPosition.SEVEN.getElement()]);
-        }
-        for (int i = 6; i < LOOP_LAPS_NINE; i++) {
-            squareNine.add(element[i][ElementPosition.EIGHT.getElement()]);
-        }
-        return squareNine;
-    }
-
-    public boolean checkSquare() {
-        if (squareOne.size() == SQUARE_MAX_SIZE
-                && squareTwo.size() == SQUARE_MAX_SIZE
-                && squareThree.size() == SQUARE_MAX_SIZE
-                && squareFour.size() == SQUARE_MAX_SIZE
-                && squareFive.size() == SQUARE_MAX_SIZE
-                && squareSix.size() == SQUARE_MAX_SIZE
-                && squareSeven.size() == SQUARE_MAX_SIZE
-                && squareEight.size() == SQUARE_MAX_SIZE
-                && squareNine.size() == SQUARE_MAX_SIZE
-                && !squareOne.contains(SudokuElements.ZERO.getElement())
-                && !squareTwo.contains(SudokuElements.ZERO.getElement())
-                && !squareThree.contains(SudokuElements.ZERO.getElement())
-                && !squareFour.contains(SudokuElements.ZERO.getElement())
-                && !squareFive.contains(SudokuElements.ZERO.getElement())
-                && !squareSix.contains(SudokuElements.ZERO.getElement())
-                && !squareSeven.contains(SudokuElements.ZERO.getElement())
-                && !squareEight.contains(SudokuElements.ZERO.getElement())
-                && !squareNine.contains(SudokuElements.ZERO.getElement())) {
-            return true;
-        } else {
-            return false;
-        }
+        return false;
     }
 }
