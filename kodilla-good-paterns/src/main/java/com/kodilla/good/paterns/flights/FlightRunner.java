@@ -3,17 +3,12 @@ package com.kodilla.good.paterns.flights;
 public class FlightRunner {
 
     public static void main(String[] args) {
+        Searcher searcher = new Searcher();
 
-        FlightFinder flightfinder = new FlightFinder();
+        searcher.findByArrival(City.LONDON.getCity());
 
-        flightfinder.findDepartureConnection("Berlin");
-        flightfinder.findArrivalConnection("London");
-        flightfinder.findViaConnection("Warsaw", "Paris", "Miami");
+        searcher.findByDeparture(City.WARSAW.getCity());
 
-        flightfinder.findDepartureConnection("Radom");
-        flightfinder.findArrivalConnection("Glasgow");
-        flightfinder.findViaConnection("Wroclaw", "Paris", "Miami");
-
-
+        searcher.findByVia(City.NEW_YORK.getCity(), City.PARIS.getCity(), City.WARSAW.getCity());
     }
 }
