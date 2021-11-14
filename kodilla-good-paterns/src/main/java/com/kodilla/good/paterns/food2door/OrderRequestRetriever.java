@@ -6,10 +6,14 @@ public class OrderRequestRetriever {
 
     public OrderRequest retrieve(Shop shop, int quantity, int productNumber) {
         product = shop.getProductsList(quantity).get(productNumber);
-        System.out.println("Shop: " + shop.getShopName());
-        System.out.println("Product: " + product.getName());
-        System.out.println("Quantity: " + product.getQuantity());
-        System.out.println("Price: " + (product.getPrice() * product.getQuantity()));
+        print(shop.getShopName(), product.getName(), product.getQuantity(), product.getPrice());
         return new OrderRequest(shop, product);
+    }
+
+    private void print(String shopName, String productName, int productQuantity, double productPrice) {
+        System.out.println("Shop: " + shopName);
+        System.out.println("Product: " + productName);
+        System.out.println("Quantity: " + productQuantity);
+        System.out.println("Price: " + (productPrice * productQuantity));
     }
 }
