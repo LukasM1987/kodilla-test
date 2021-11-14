@@ -9,6 +9,6 @@ public class FlightRunner {
 
         searcher.findByDeparture(City.WARSAW.getCity());
 
-        searcher.findByVia(City.NEW_YORK.getCity(), City.PARIS.getCity(), City.WARSAW.getCity());
+        searcher.findByVia(City.PARIS.getCity());
     }
 }

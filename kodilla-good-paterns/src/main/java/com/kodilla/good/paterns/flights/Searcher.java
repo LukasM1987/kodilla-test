@@ -27,12 +27,12 @@ public class Searcher {
         printDeparture();
     }
 
-    public void findByVia(String departure, String via, String arrival) {
+    public void findByVia(String via) {
         viaFlightsDeparture = flightRepository.getFlights().stream()
-                .filter(f -> f.getDepartureCity().equals(departure) && f.getArrivalCity().equals(via))
+                .filter(f -> f.getArrivalCity().equals(via))
                 .collect(Collectors.toList());
         viaFlightsArrival = flightRepository.getFlights().stream()
-                .filter(f -> f.getDepartureCity().equals(via) && f.getArrivalCity().equals(arrival))
+                .filter(f -> f.getDepartureCity().equals(via))
                 .collect(Collectors.toList());
         printVia();
     }
@@ -45,9 +45,9 @@ public class Searcher {
                     System.out.println(flight);
                 }
             } else {
-                throw new FlightNotExist("Connection does not exist");
+                throw new FlightNotExistException("Connection does not exist");
             }
-        } catch (FlightNotExist ignored) {
+        } catch (FlightNotExistException ignored) {
 
         }
     }
@@ -60,9 +60,9 @@ public class Searcher {
                     System.out.println(flight);
                 }
             } else {
-                throw new FlightNotExist("Connection does not exist");
+                throw new FlightNotExistException("Connection does not exist");
             }
-        } catch (FlightNotExist ignored) {
+        } catch (FlightNotExistException ignored) {
 
         }
     }
@@ -78,9 +78,9 @@ public class Searcher {
                     System.out.println(arrival);
                 }
             } else {
-                throw new FlightNotExist("Connection does not exist");
+                throw new FlightNotExistException("Connection does not exist");
             }
-        } catch (FlightNotExist ignored) {
+        } catch (FlightNotExistException ignored) {
 
         }
     }

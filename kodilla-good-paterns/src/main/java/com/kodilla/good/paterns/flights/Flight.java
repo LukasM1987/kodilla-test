@@ -1,5 +1,4 @@
 package com.kodilla.good.paterns.flights;
-import java.time.LocalDate;
 import java.util.Objects;
 
 public class Flight {
