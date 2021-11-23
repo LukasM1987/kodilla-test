@@ -3,12 +3,9 @@ package com.kodilla.good.paterns.food2door;
 public class Food2Door {
 
     public static void main(String[] args) {
-        GlutenFreeShop glutenFreeShop = new GlutenFreeShop();
+        ExtraFoodShop extraFoodShop = new ExtraFoodShop();
 
         OrderRequestRetriever orderRequestRetriever = new OrderRequestRetriever();
-        OrderRequest orderRequest = orderRequestRetriever.retrieve(glutenFreeShop, 6, 2);
-
-        Shop shop = orderRequest.getShop();
-        shop.process(orderRequest);
+        orderRequestRetriever.retrieve(extraFoodShop, 2, "Product 10");
     }
 }

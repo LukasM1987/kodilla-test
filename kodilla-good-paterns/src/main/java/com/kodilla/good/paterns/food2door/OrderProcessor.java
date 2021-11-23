@@ -14,19 +14,9 @@ public class OrderProcessor {
         boolean isOrdered = orderService.order(orderRequest.getShop(), orderRequest.getProduct());
         if (isOrdered) {
             orderRepository.createOrder(orderRequest.getShop(), orderRequest.getProduct());
-            printMessage(true);
             return new OrderDto(orderRequest.getShop(), true);
         } else {
-            printMessage(false);
             return new OrderDto(orderRequest.getShop(), false);
-        }
-    }
-
-    private void printMessage(boolean result) {
-        if (result) {
-            System.out.println("The order has been processed.");
-        } else {
-            System.out.println("Unfortunately, the order cannot be processed.");
         }
     }
 }

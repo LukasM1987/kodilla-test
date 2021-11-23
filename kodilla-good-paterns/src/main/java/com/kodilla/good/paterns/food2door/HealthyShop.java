@@ -14,21 +14,18 @@ public class HealthyShop implements Shop {
         return SHOP_NAME;
     }
 
-    @Override
-    public List<Product> getProductsList(int quantity) {
-        products.add(new Product("Product 1", quantity, 7.79));
-        products.add(new Product("Product 2", quantity, 6.79));
-        products.add(new Product("Product 3", quantity, 5.79));
-        products.add(new Product("Product 4", quantity, 4.79));
-        return products;
+    public HealthyShop() {
+
     }
 
-    @Override
-    public OrderDto process(OrderRequest orderRequest) {
-        if (orderRequest.getShop().getShopName().equals(SHOP_NAME)) {
-            OrderProcessor orderProcessor = new OrderProcessor(new ProductOrderService(), new OrderRepositoryService());
-            return orderProcessor.process(orderRequest);
-        }
-        return new OrderDto(orderRequest.getShop(), false);
+    public void database(int quantity) {
+        products.add(new Product("Product 5", quantity, 7.79));
+        products.add(new Product("Product 6", quantity, 6.79));
+        products.add(new Product("Product 7", quantity, 5.79));
+        products.add(new Product("Product 8", quantity, 4.79));
+    }
+
+    public List<Product> getProducts() {
+        return products;
     }
 }
