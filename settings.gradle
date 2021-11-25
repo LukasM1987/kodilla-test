@@ -7,4 +7,5 @@ include 'kodilla-good-paterns'
 include 'kodilla-paterns' //to dopisałem będąc na masterze
 include 'kodilla-jdbc'
 include 'sudoku-kodilla'
+include 'kodilla-patterns2'
 
