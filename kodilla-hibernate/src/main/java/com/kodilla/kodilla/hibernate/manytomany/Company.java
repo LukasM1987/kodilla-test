@@ -5,6 +5,11 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedQuery(
+        name = "Company.findCompanyByFragment",
+        query = "FROM Company WHERE name LIKE :THREESIGNS"
+)
+
 @NamedNativeQuery(
         name = "Company.findByThreeFirstSigns",
         query = "SELECT * FROM COMPANIES WHERE SUBSTRING(COMPANY_NAME, 1, 3) = :THREESIGNS",
