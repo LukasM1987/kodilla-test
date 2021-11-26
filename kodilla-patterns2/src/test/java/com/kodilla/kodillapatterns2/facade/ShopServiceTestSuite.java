@@ -6,7 +6,6 @@ import com.kodilla.kodillapatterns2.facade.api.OrderFacade;
 import com.kodilla.kodillapatterns2.facade.api.OrderProcessingException;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;
