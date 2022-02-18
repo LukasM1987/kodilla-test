@@ -20,8 +20,6 @@ public class StoredProcTestSuite {
         ResultSet rs = statement.executeQuery(sqlCheckTable);
 
         // When
-        //String sqlProcedureCall = "CALL UpdateVipLevels()";
-        //statement.execute(sqlProcedureCall);
         Statement statement2 = dbManager.getConnection().createStatement();
         String sqlProcedureCall = "CALL UpdateVipLevels()";
         statement2.execute(sqlProcedureCall);
@@ -33,7 +31,6 @@ public class StoredProcTestSuite {
         }
         Assertions.assertEquals(5, howMany);
         rs.close();
-        //statement.close();
         statement2.close();
     }
 
@@ -48,8 +45,6 @@ public class StoredProcTestSuite {
         ResultSet rs = statement.executeQuery(sqlCheckTable);
 
         //When
-        //String sqlProcedureCall = "CALL UpdateBestsellers()";
-        //statement.executeUpdate(sqlProcedureCall);
         Statement statement2 = dbManager.getConnection().createStatement();
         String sqlProcedureCall = "CALL UpdateBestsellers()";
         statement2.execute(sqlProcedureCall);
@@ -61,7 +56,6 @@ public class StoredProcTestSuite {
         }
         Assertions.assertEquals(5, howMany);
         rs.close();
-        //statement.close();
         statement2.close();
     }
 }
